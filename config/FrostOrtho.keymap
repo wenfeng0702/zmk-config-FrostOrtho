@@ -106,10 +106,10 @@
 
         layer_2 {
             bindings = <
-&kp SLASH                   &kp LBKT   &kp UP    &kp RBKT   &kp PG_UP                  &kp LS(NUMBER_3)  &kp LS(NUMBER_4)  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3
-&kp MINUS                   &kp LEFT   &kp DOWN  &kp RIGHT  &kp PAGE_DOWN              &kp LS(N2)        &kp LS(N7)        &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6
-&mt LEFT_SHIFT N0           &trans     &trans    &trans     &kp PERIOD                 &kp SEMICOLON     &kp SQT           &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9
-&mt LEFT_CONTROL LS(MINUS)  &kp ENTER  &trans    &trans     &trans         &trans      &trans            &trans            &trans        &kp NUMBER_0  &kp EQUAL
+&kp SLASH                   &kp LBKT  &kp UP    &kp RBKT   &kp PG_UP                  &kp LS(NUMBER_3)  &kp LS(NUMBER_4)  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3
+&kp MINUS                   &kp LEFT  &kp DOWN  &kp RIGHT  &kp PAGE_DOWN              &kp LS(N2)        &kp LS(N7)        &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6
+&mt LEFT_SHIFT N0           &trans    &trans    &trans     &kp PERIOD                 &kp SEMICOLON     &kp SQT           &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9
+&mt LEFT_CONTROL LS(MINUS)  &trans    &trans    &trans     &trans         &trans      &trans            &trans            &trans        &kp NUMBER_0  &kp EQUAL
             >;
 
             sensor-bindings = <&inc_dec_kp K_UNDO LS(K_REDO)>, <&rsr_trans>;
@@ -117,8 +117,8 @@
 
         layer_3 {
             bindings = <
-&kp ESCAPE      &trans          &kp UP_ARROW    &trans           &trans               &trans  &trans  &trans  &trans  &trans
-&kp HOME        &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END              &trans  &trans  &trans  &trans  &trans
+&kp ESCAPE      &trans          &kp UP_ARROW    &trans           &trans               &trans  &trans  &kp F1  &kp F2  &kp F3
+&kp HOME        &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END              &trans  &trans  &kp F4  &trans  &trans
 &kp LEFT_SHIFT  &trans          &trans          &trans           &trans               &trans  &trans  &trans  &trans  &trans
 &trans          &trans          &trans          &trans           &trans   &trans      &trans  &trans  &trans  &trans  &trans
             >;
