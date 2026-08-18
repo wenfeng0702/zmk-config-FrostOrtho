@@ -90,7 +90,7 @@
 &mt LEFT_CONTROL TAB  &kp LEFT_ALT  &kp LEFT_WIN  &lt 3 LANG_HANJA  &lt 2 SPACE  &lt 1 SPACE      &lt 4 ENTER  &kp BACKSPACE  &trans     &lt 4 F10   &mt RIGHT_SHIFT INTERNATIONAL_1
             >;
 
-            sensor-bindings = <&rsr_vol &rsr_trans>;
+            sensor-bindings = <&scroll_up_down>, <&rsr_trans>;
         };
 
         layer_1 {
@@ -101,7 +101,7 @@
 &kp LCTRL       &kp LEFT_ALT  &trans  &trans    &trans    &trans      &trans    &kp DEL   &trans  &trans  &kp ESCAPE
             >;
 
-            sensor-bindings = <&rsr_vol &rsr_trans>;
+            sensor-bindings = <&inc_dec_kp LEFT RIGHT>, <&rsr_trans>;
         };
 
         layer_2 {
@@ -112,7 +112,7 @@
 &mt LEFT_CONTROL LS(MINUS)  &kp ENTER  &trans  &trans  &trans             &trans      &trans            &trans            &trans                &kp LS(NUMBER_1)   &kp EQUAL
             >;
 
-            sensor-bindings = <&rsr_vol &rsr_trans>;
+            sensor-bindings = <&inc_dec_kp K_UNDO LS(K_REDO)>, <&rsr_trans>;
         };
 
         layer_3 {
