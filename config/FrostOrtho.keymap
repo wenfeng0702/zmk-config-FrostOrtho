@@ -156,7 +156,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans    &trans    &trans    &trans
             >;
 
-            sensor-bindings = <&rsr_vol &rsr_trans>;
+sensor-bindings = <&scroll_up_down &rsr_trans>;
         };
 
         layer_7 {
