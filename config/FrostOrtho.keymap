@@ -7,6 +7,8 @@
 #include <dt-bindings/zmk/pointing.h>
 
 #define MOUSE 6
+// Standard SCRL_UP/SCRL_DOWN use 10; 40 gives the fast layer 4x scroll distance.
+#define FAST_SCROLL_SPEED 40
 
 &mt {
     flavor = "balanced";
@@ -61,6 +63,20 @@
             bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
         };
 
+        fast_scroll_up_down: behavior_sensor_rotate_mouse_wheel_fast_up_down {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            tap-ms = <20>;
+            bindings = <&msc MOVE_Y(FAST_SCROLL_SPEED)>, <&msc MOVE_Y(-FAST_SCROLL_SPEED)>;
+        };
+
+        scroll_left_right: behavior_sensor_rotate_mouse_wheel_left_right {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            tap-ms = <20>;
+            bindings = <&msc SCRL_RIGHT>, <&msc SCRL_LEFT>;
+        };
+
         vol_up_down: vol_up_down {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
@@ -101,7 +117,7 @@
 &kp LCTRL       &kp LEFT_ALT  &trans  &trans    &trans    &trans      &mkp MB4  &mkp MB5  &trans  &trans  &kp ESCAPE
             >;
 
-            sensor-bindings = <&inc_dec_kp LEFT RIGHT>, <&rsr_trans>;
+            sensor-bindings = <&fast_scroll_up_down>, <&rsr_trans>;
         };
 
         layer_2 {
@@ -112,7 +128,7 @@
 &mt LEFT_CONTROL LS(MINUS)  &trans    &trans    &trans     &trans         &trans      &trans            &trans            &trans        &kp NUMBER_0  &kp EQUAL
             >;
 
-            sensor-bindings = <&inc_dec_kp K_UNDO LS(K_REDO)>, <&rsr_trans>;
+            sensor-bindings = <&scroll_left_right>, <&rsr_trans>;
         };
 
         layer_3 {
