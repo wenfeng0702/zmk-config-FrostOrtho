@@ -7,8 +7,10 @@
 #include <dt-bindings/zmk/pointing.h>
 
 #define MOUSE 6
-// Standard SCRL_UP/SCRL_DOWN use 10; 40 gives the fast layer 4x scroll distance.
-#define FAST_SCROLL_SPEED 40
+// Smooth scrolling needs mouse-movement-sized values. Keep the fast layer at 4x.
+#define ENCODER_SCROLL_SPEED 600
+#define FAST_SCROLL_SPEED 2400
+#define ENCODER_SCROLL_TAP_MS 40
 
 &mt {
     flavor = "balanced";
@@ -59,22 +61,24 @@
         scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
-            tap-ms = <20>;
-            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+            tap-ms = <ENCODER_SCROLL_TAP_MS>;
+            bindings = <&msc MOVE_Y(ENCODER_SCROLL_SPEED)>,
+                       <&msc MOVE_Y(-ENCODER_SCROLL_SPEED)>;
         };
 
         fast_scrl: fast_scrl {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
-            tap-ms = <20>;
+            tap-ms = <ENCODER_SCROLL_TAP_MS>;
             bindings = <&msc MOVE_Y(FAST_SCROLL_SPEED)>, <&msc MOVE_Y(-FAST_SCROLL_SPEED)>;
         };
 
         horiz_scrl: horiz_scrl {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
-            tap-ms = <20>;
-            bindings = <&msc SCRL_RIGHT>, <&msc SCRL_LEFT>;
+            tap-ms = <ENCODER_SCROLL_TAP_MS>;
+            bindings = <&msc MOVE_X(ENCODER_SCROLL_SPEED)>,
+                       <&msc MOVE_X(-ENCODER_SCROLL_SPEED)>;
         };
 
         vol_up_down: vol_up_down {
